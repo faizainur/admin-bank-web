@@ -6,10 +6,17 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e"
+    "test:e2e": "vue-cli-service test:e2e",
+    "css-build": "node-sass --omit-source-map-url src/assets/index.scss src/assets/index.css"
   },
   "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.1",
+    "bulma": "^0.9.2",
     "core-js": "^3.6.5",
+    "js-file-download": "^0.4.12",
+    "mongodb": "^3.6.9",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
