@@ -36,6 +36,16 @@ const routes = [
     name: "AdminBankBCredit",
     component: () => import("../views/AdminBankBCredit"),
   },
+  {
+    path: "/gov",
+    name: "AdminGov",
+    component: () => import("../views/AdminGov"),
+  },
+  {
+    path: "/gov/credit",
+    name: "AdminGovCredit",
+    component: () => import("../views/AdminGovCredit"),
+  },
 ];
 
 const router = createRouter({

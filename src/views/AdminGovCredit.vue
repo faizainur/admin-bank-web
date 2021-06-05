@@ -2,7 +2,7 @@
   <div class="container px-4">
     <section class="hero">
       <div class="hero-body has-text-left">
-        <p class="has-text-weight-bold has-text-dark">Bank A</p>
+        <p class="has-text-weight-bold has-text-dark">Goverment</p>
         <p class="title mb-2">
           Credit Application Details
         </p>
@@ -17,6 +17,16 @@
           </div>
           <div class="column">
             <p>{{ data.record_id }}</p>
+          </div>
+        </div>
+        <div class="columns mb-0">
+          <div class="column is-2">
+            <p>Bank Name</p>
+          </div>
+          <div class="column">
+            <p>
+              {{ data.bank_name }}
+            </p>
           </div>
         </div>
         <div class="columns mb-0">
@@ -115,25 +125,6 @@
             <a @click="blOnClick">Download</a>
           </div>
         </div>
-        <div class="columns mt-5 pt-5">
-          <div class="column"></div>
-          <div class="column has-text-right">
-            <button
-              class="button is-danger  mx-2"
-              @click="rejectOnClick"
-              :class="{ 'is-loading': rejectLoadingState }"
-            >
-              Reject
-            </button>
-            <button
-              class="button is-link mx-2"
-              @click="approveOnClick"
-              :class="{ 'is-loading': approveLoadingState }"
-            >
-              Approve
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -217,52 +208,6 @@ export default {
       //   console.log(cid);
       //   console.log(ext);
     },
-    async approveOnClick() {
-      try {
-        var params = new URLSearchParams();
-        params.append("record_id", this.data.record_id);
-        this.approveLoadingState = true;
-        await axios.post(
-          "https://api.catena.id/v1/fabric/credit/approve",
-          params,
-          {
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          }
-        );
-        var res = await this.fetchRecordData();
-        this.approveLoadingState = false;
-        this.data = res.data;
-        this.data.status =
-          res.data.status.charAt(0).toUpperCase() + res.data.status.slice(1);
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    async rejectOnClick() {
-      try {
-        var params = new URLSearchParams();
-        params.append("record_id", this.data.record_id);
-        this.rejectLoadingState = true;
-        await axios.post(
-          "https://api.catena.id/v1/fabric/credit/reject",
-          params,
-          {
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          }
-        );
-        var res = await this.fetchRecordData();
-        this.rejectLoadingState = false;
-        this.data = res.data;
-        this.data.status =
-          res.data.status.charAt(0).toUpperCase() + res.data.status.slice(1);
-      } catch (error) {
-        console.log(error);
-      }
-    },
     fetchRecordData() {
       return new Promise(async (resolve, reject) => {
         try {
@@ -285,7 +230,7 @@ export default {
       return new Promise(async (resolve, reject) => {
         try {
           var res = await axios.get(
-            "https://api.catena.id/backend/banka/refresh",
+            "https://api.catena.id/backend/bankb/refresh",
             {
               params: {
                 email: this.data.email,

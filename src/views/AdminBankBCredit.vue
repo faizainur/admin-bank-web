@@ -91,6 +91,16 @@
         </div>
         <div class="columns mb-0">
           <div class="column is-2">
+            <p>Phone Number</p>
+          </div>
+          <div class="column">
+            <p>
+              {{ profile.phone_number }}
+            </p>
+          </div>
+        </div>
+        <div class="columns mb-0">
+          <div class="column is-2">
             <p>ID Card</p>
           </div>
           <div class="column">
