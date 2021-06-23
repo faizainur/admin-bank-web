@@ -118,7 +118,7 @@ export default {
             this.list = [];
             this.list[0] = response.data;
             this.list.forEach((item, idx, arr) => {
-              item.link = "/bankb/credit?id=" + item.record_id;
+              item.link = "/gov/credit?id=" + item.record_id;
             });
             console.log(response.data);
             break;
@@ -134,7 +134,7 @@ export default {
             );
             this.list = response.data;
             this.list.forEach((item, idx, arr) => {
-              item.link = "/bankb/credit?id=" + item.record_id;
+              item.link = "/gov/credit?id=" + item.record_id;
             });
             console.log(response.data);
             break;
@@ -149,7 +149,7 @@ export default {
             );
             this.list = response.data;
             this.list.forEach((item, idx, arr) => {
-              item.link = "/bankb/credit?id=" + item.record_id;
+              item.link = "/gov/credit?id=" + item.record_id;
             });
             console.log(response.data);
             break;

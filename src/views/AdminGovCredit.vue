@@ -6,9 +6,9 @@
         <p class="title mb-2">
           Credit Application Details
         </p>
-        <p class="has-text-weight-light has-text-grey ">
+        <!-- <p class="has-text-weight-light has-text-grey ">
           Review the information submitted by the customer
-        </p>
+        </p> -->
       </div>
       <div class="box-custom py-5 px-6 mx-3 has-text-left">
         <div class="columns mb-0">
@@ -109,7 +109,7 @@
             </p>
           </div>
         </div>
-        <div class="columns mb-0">
+        <!-- <div class="columns mb-0">
           <div class="column is-2">
             <p>ID Card</p>
           </div>
@@ -124,7 +124,7 @@
           <div class="column">
             <a @click="blOnClick">Download</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
